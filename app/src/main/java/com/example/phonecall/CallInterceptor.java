@@ -13,10 +13,10 @@ public class CallInterceptor extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         try {
-            Toast.makeText(context, "Phone call", Toast.LENGTH_SHORT).show();
-            Intent i=new Intent(context, PhoneCall.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(i);
+
+            Intent serviceIntent = new Intent(context, BroadcastService.class);
+            context.startService(serviceIntent);
+
 
 
         } catch (Exception e) {
